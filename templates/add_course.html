@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Course Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'add_course.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Add a new course </h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="textbox">
+                <input type="text" name="code" placeholder="كود الكورس" required>
+            </div>
+            <div class="textbox">
+                <input type="text" name="name" placeholder="اسم الكورس" required>
+            </div>
+            <div class="textbox">
+                <input type="text" name="description" placeholder="وصف الكورس" required>
+            </div>
+            <div class="textbox">
+                <input type="text" name="prerequisites" placeholder="المتطلبات" required>
+            </div>
+            
+            </div>
+            <div class="textbox">
+                <input type="number" name="capacity" placeholder="السعة" required>
+            </div>
+            <div class="textbox">
+                <input type="text" name="schedule" placeholder="الجدول" required>
+            </div>
+            <button type="submit" class="btn">إضافة</button>
+        </form>
+        <a href="{% url 'home' %}" class="btn">العودة إلى الصفحة الرئيسية</a>
+    </div>
+</body>
+</html>

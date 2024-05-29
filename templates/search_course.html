@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Course</title>
+    <link rel="stylesheet" href="{% static 'search_course.css' %}">
+</head>
+<body>
+    
+
+    <div class="container">
+        <h1>بحث عن كورس</h1>
+        <form action="{% url 'search_course' %}" method="GET">
+            <input type="text" name="course_name" placeholder="اسم الكورس" value="{{ query }}">
+            <button type="submit">بحث</button>
+        </form>
+        {% if courses %}
+            <div class="course-details">
+                <h2>نتائج البحث:</h2>
+                {% for course in courses %}
+                    <p>اسم الكورس: {{ course.name }}</p>
+                    <p>وصف الكورس: {{ course.description }}</p>
+                    <p>المتطلبات: {{ course.prerequisites }}</p>
+                    <p>السعة: {{ course.capacity }}</p>
+                    <p>الجدول: {{ course.schedule }}</p>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>لا يوجد نتائج للبحث</p>
+        {% endif %}
+        <a href="{% url 'home' %}" class="btn">العودة إلى الصفحة الرئيسية</a>
+    </div>
+ 
+</body>
+</html>

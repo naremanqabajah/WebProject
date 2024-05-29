@@ -1,0 +1,78 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #4a148c; /* Dark purple background */
+    color: white; /* White text color */
+    height: 100vh; /* Full viewport height */
+}
+
+.container {
+    width: 90%;
+    max-width: 400px; /* Limiting max width for better aesthetics */
+    margin: auto;
+    text-align: center;
+    padding-top: 50px; /* Spacing from top */
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 10px; /* Space below the input field */
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #673ab7; /* Lighter purple for buttons */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #9575cd; /* Light purple on hover */
+}
+
+.course-details {
+    background-color: #311b92; /* Even darker purple for details section */
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Shadow for some depth */
+}
+
+.course-details h2 {
+    margin-bottom: 15px;
+}
+
+.course-details p {
+    text-align: left; /* Aligning text to the left for better readability */
+    line-height: 1.6; /* Spacing out the lines a bit */
+    border-bottom: 1px solid #673ab7; /* Light purple line below each detail */
+    padding-bottom: 5px; /* Padding below text */
+}
+a.btn:hover {
+    background-color: #d1d1d1; /* Darker grey on hover */
+}
+a.btn {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e3e3e3; /* Light grey background */
+    color: #333; /* Dark grey text */
+    text-decoration: none;
+    border-radius: 5px;
+}

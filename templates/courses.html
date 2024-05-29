@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'courses.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Courses</h1>
+        <div class="course-list">
+            {% for course in courses %}
+                <div class="course-item">
+                    <h3>{{ course.name }}</h3>
+                    <p><strong>Code:</strong> {{ course.code }}</p>
+                    <p><strong>Description:</strong> {{ course.description }}</p>
+                    <p><strong>Prerequisites:</strong> {{ course.prerequisites }}</p>
+                    <p><strong>Instructor:</strong> {{ course.instructor }}</p>
+                    <p><strong>Capacity:</strong> {{ course.capacity }}</p>
+                    <form method="POST" action="{% url 'delete_course' course.id %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">حذف</button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="{% url 'home' %}" class="btn">العودة إلى الصفحة الرئيسية</a>
+    </div>
+</body>
+</html>

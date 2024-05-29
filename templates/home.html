@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>نظام تسجيل الكورسات</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'logout' %}"> sing out <output></output></a></li>
+                    <li><a href="{% url 'add_course' %}"> add_course</a></li>
+                    <li><a href="{% url 'courses' %}">courses</a></li>
+                    <li><a href="{% url 'search_course' %}">search_course</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="welcome">
+                <h2>مرحبا بكم في نظام تسجيل الكورسات</h2>
+                <p>استخدم الأزرار أعلاه للتنقل بين الصفحات المختلفة.</p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h1>تسجيل الدخول</h1>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="textbox">
+                    <i class="fas fa-user"></i>
+                    <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+                </div>
+                <div class="textbox">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="كلمة المرور" required>
+                </div>
+                <button type="submit" class="btn">تسجيل الدخول</button>
+            </form>
+            <p>لا تملك حساباً؟ <a href="{% url 'register' %}">إنشاء حساب</a></p>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>

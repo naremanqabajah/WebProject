@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="register-box">
+            <h1>إنشاء حساب</h1>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="textbox">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="name" placeholder="الاسم الكامل" required>
+                </div>
+                <div class="textbox">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+                </div>
+                <div class="textbox">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="كلمة المرور" required>
+                </div>
+                <div class="textbox">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="confirm_password" placeholder="تأكيد كلمة المرور" required>
+                </div>
+                <button type="submit" class="btn">إنشاء حساب</button>
+            </form>
+            <p>لديك حساب بالفعل؟ <a href="{% url 'login' %}">تسجيل الدخول</a></p>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
